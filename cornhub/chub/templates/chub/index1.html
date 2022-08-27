@@ -17,6 +17,15 @@
     }
 </style>
 <body>
-    <h1>Lorem ipsum dolor sit amet consectetur <a href='{% url 'q4' %}'>consectetur</a>adipisicing elit. Sunt doloribus quos incidunt nostrum. Excepturi alias asperiores nemo tenetur facere non, itaque eveniet tempore nisi magni quae id quaerat animi nobis.</h1>
+    
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt doloribus <form method="POST">
+        {% csrf_token %}
+        <input type="submit" name="btn" value={{question.correct_id}}>
+        <input type="submit" name="btn" value={{question.wrong_id_1}}>
+        <input type="submit" name="btn" value={{question.wrong_id_2}}>
+        <input type="submit" name="btn" value={{question.wrong_id_3}}>
+       </form>
+       <!-- {{ val }} -->
+       quos incidunt nostrum. Excepturi alias asperiores nemo tenetur facere non, itaque eveniet tempore nisi magni quae id quaerat animi nobis.</h1>
 </body>
 </html>
